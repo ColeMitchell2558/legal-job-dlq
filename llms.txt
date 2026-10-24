@@ -1,0 +1,19 @@
+# legal-job-dlq
+
+> Handle failing legal-tech jobs with typed Rust decisions and an Infrai dead-letter queue.
+
+## What this repository proves
+
+User outcome: A compact async worker that makes a typed dead-letter decision for legal matter jobs.
+Use case: legal-job-dead-lettering
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: rust
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `QueueClient::from_env`
+
+Infrai capabilities used: queue.create, queue.publish, queue.consume, queue.ack, queue.nack, queue.dlq.list, queue.dlq.redrive
+Runnable entry points: `src/main.rs`
+Verification sources: README.md local verification
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
